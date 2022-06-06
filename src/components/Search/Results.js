@@ -3,7 +3,7 @@ import Result from "./Result"
 
 function Results(props){
     return(
-        <div className="mt-5">
+        <div className="flex flex-col items-center mt-5">
             <div className="m-5">
                 <Result/>
             </div>

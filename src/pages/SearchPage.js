@@ -3,7 +3,7 @@ import SearchFilter from "../components/Search/Searchfilter"
 import Results from "../components/Search/Results"
 function SearchPage(props){
     return(
-        <div>
+        <div className="">
             <SearchFilter/>
             <Results/>
         </div>
