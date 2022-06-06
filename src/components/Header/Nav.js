@@ -1,17 +1,18 @@
-import SearchBar from "../SearchBar"
+import SearchBar from "../Search/SearchBar"
 import { Link } from "react-router-dom";
+import logo from "../img/Foodie-logos_transparent.png"
 
 function Nav(){
     return (
     <>
-        <nav className="bg-slate-400">
+        <nav className="bg-orange-400">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
                             <img
                                 className="h-20 w-20"
-                                
+                                src={logo}
                                 alt="logo"
                             />
                         </div>

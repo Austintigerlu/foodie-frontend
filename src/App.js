@@ -4,6 +4,7 @@ import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import SearchPage from "./pages/SearchPage";
 
 import {Route, Routes} from "react-router-dom";
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/search" element={<SearchPage/>}/>
       </Routes>
       <Footer/>
     </div>
