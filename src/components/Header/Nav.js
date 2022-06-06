@@ -1,8 +1,16 @@
 import SearchBar from "../Search/SearchBar"
 import { Link } from "react-router-dom";
 import logo from "../img/Foodie-logos_transparent.png"
+import {useNavigate} from "react-router-dom";
 
 function Nav(){
+    const navigate = useNavigate();
+
+    function restaurantSearch(search, location){
+        const urlEncodedSearch = encodeURI(search);
+        const urlEncodedLocation = encodeURI(location);
+        navigate(`/search?find_desc=${urlEncodedSearch}&find_loc=${urlEncodedLocation}`);
+    }
     return (
     <>
         <nav className="bg-orange-400">
@@ -17,7 +25,7 @@ function Nav(){
                             />
                         </div>
                         <div className="ml-10 flex items-baseline space-x-4">
-                            <SearchBar/>
+                            <SearchBar restaurantSearch={restaurantSearch}/>
                         </div>
                         </div>
                         <div className="mr-2 flex items-end space-x-4">
