@@ -18,11 +18,13 @@ function Nav(){
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
+                            <Link to="/">
                             <img
                                 className="h-20 w-20"
                                 src={logo}
                                 alt="logo"
                             />
+                            </Link>
                         </div>
                         <div className="ml-10 flex items-baseline space-x-4">
                             <SearchBar restaurantSearch={restaurantSearch}/>

@@ -1,5 +1,6 @@
 import React from "react"
 import SearchBar from "../components/Search/SearchBar"
+
 import {useNavigate} from "react-router-dom";
 
 function HomePage(props){
@@ -13,6 +14,7 @@ function HomePage(props){
     
     return(
         <div className="flex justify-center mt-20">
+            
             <SearchBar restaurantSearch={restaurantSearch}/>
         </div>
     )

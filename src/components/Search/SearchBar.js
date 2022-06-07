@@ -6,11 +6,11 @@ function SearchBar(props){
     const [location, setLocation] = useState(props.location || "");
 
     function Submit(e){
+        e.preventDefault();
         if(typeof props.restaurantSearch === 'function'){
             props.restaurantSearch(search, location)
         }
-        e.preventDefault();
-        console.log(search, location)
+
     }
     return(
     <form onSubmit={Submit}>
