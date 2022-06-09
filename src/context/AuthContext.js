@@ -13,10 +13,35 @@ export function AuthProvider({children}) {
     let [loading, setLoading] = useState(true)
 
     let navigate = useNavigate();
+    
     const URL = "http://localhost:8000/api/"
+    
+    let registerUser = async(e) => {
+        e.preventDefault()
+        let response = await fetch(URL+'users/register/', {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'username': e.target.username.value, 
+                'password': e.target.password.value,
+                'email': e.target.email.value,
+                'first_name': e.target.first_name.value,
+                'last_name': e.target.last_name.value,
+            })
+        })
+        let data = await response.json()
+        if(response.status === 201){
+            navigate('/login')
+        } else{
+            console.log('ERROR')
+        }
+    }
+
     let loginUser = async(e) => {
         e.preventDefault()
-        let response = await fetch(URL+'users/login', {
+        let response = await fetch(URL+'users/login/', {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -72,6 +97,7 @@ export function AuthProvider({children}) {
         authTokens: authTokens,
         user: user,
         logoutUser: logoutUser,
+        registerUser: registerUser,
     }
 
     useEffect(()=> {
