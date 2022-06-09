@@ -13,10 +13,10 @@ export function AuthProvider({children}) {
     let [loading, setLoading] = useState(true)
 
     let navigate = useNavigate();
-
+    const URL = "http://localhost:8000/api/"
     let loginUser = async(e) => {
         e.preventDefault()
-        let response = await fetch('http://localhost:8000/api/token/', {
+        let response = await fetch(URL+'users/login', {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ export function AuthProvider({children}) {
 
     let updateToken = async ()=> {
 
-        let response = await fetch('http://localhost:8000/api/token/refresh/', {
+        let response = await fetch(URL+'users/refresh/', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
