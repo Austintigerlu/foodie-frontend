@@ -1,9 +1,9 @@
-import React from "react"
+import React, {useContext} from "react"
 import SearchBar from "../components/Search/SearchBar"
-
 import {useNavigate} from "react-router-dom";
 
 function HomePage(props){
+    
     const navigate = useNavigate();
 
     function restaurantSearch(search, location){
@@ -14,7 +14,6 @@ function HomePage(props){
     
     return(
         <div className="flex justify-center mt-20">
-            
             <SearchBar restaurantSearch={restaurantSearch}/>
         </div>
     )

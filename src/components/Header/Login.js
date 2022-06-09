@@ -1,24 +1,27 @@
 import {Link, useNavigate, Navigate} from 'react-router-dom';
-import{useEffect, useState} from 'react';
+import {useEffect, useState, useContext} from 'react';
+import AuthContext from '../../context/AuthContext'
 
 function Login(props) {
     
-  
-      return (
+    let {loginUser} = useContext(AuthContext)
+
+    return (
         <div className='min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
           <div className='max-w-md w-full space-y-8'>
             <h1 className='mt-6 text-center text-3xl font-extrabold text-gray-900'>Log in to your account</h1>
             <Link to="/register" className="mt-2 text-center text-sm text-gray-600">
               <p className="font-medium text-indigo-600 hover:text-indigo-500">or register here</p>
             </Link>
-            <form className="mt-8 space-y-6" >
+            <form className="mt-8 space-y-6" onSubmit={loginUser}>
               <div className="rounded-md shadow-sm -space-y-px">
                 <div>
                   <label className="sr-only" htmlFor="username">Username: </label>
                   <input 
                     id='username'  
                     required 
-                    type="username" 
+                    type="username"
+                    name='username' 
                     placeholder='Username'
                     className="appearance-none rounded-none relative block
                     w-full px-3 py-2 border border-gray-300
@@ -32,7 +35,8 @@ function Login(props) {
                   <input 
                     id="password" 
                     required 
-                    type="password" 
+                    type="password"
+                    name='password' 
                     placeholder='Password'
                     className="appearance-none rounded-none relative block
                       w-full px-3 py-2 border border-gray-300
@@ -53,7 +57,6 @@ function Login(props) {
                 >Login</button>
               </div>
             </form>
-            {/* {error === "Success" ? <Navigate to="/"/>: <div>{error}</div>} */}
           </div>
         </div>
       )

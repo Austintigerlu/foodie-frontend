@@ -1,5 +1,5 @@
 import React from "react"
-import Rating from "../Rating"
+import Rating from "../extra/Rating"
 
 function Result(props){
     return(
