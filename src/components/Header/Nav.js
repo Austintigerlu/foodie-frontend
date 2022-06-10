@@ -11,6 +11,7 @@ function Nav(){
         const urlEncodedLocation = encodeURI(location);
         navigate(`/search?find_desc=${urlEncodedSearch}&find_loc=${urlEncodedLocation}`);
     }
+    
     return (
     <>
         <nav className="bg-orange-400">

@@ -1,20 +1,23 @@
-import React, {useContext} from "react"
+import React from "react"
 import SearchBar from "../components/Search/SearchBar"
 import {useNavigate} from "react-router-dom";
+import CarouselComponent from "../components/extra/Carousel";
+import logo from "../components/img/Foodie-logos_transparent.png"
+import Results from "../components/Search/Results";
+import './homepage.css'
 
 function HomePage(props){
-    
-    const navigate = useNavigate();
 
-    function restaurantSearch(search, location){
-        const urlEncodedSearch = encodeURI(search);
-        const urlEncodedLocation = encodeURI(location);
-        navigate(`/search?find_desc=${urlEncodedSearch}&find_loc=${urlEncodedLocation}`);
-    }
-    
     return(
-        <div className="flex justify-center mt-20">
-            <SearchBar restaurantSearch={restaurantSearch}/>
+        <div>
+            <div className="flex justify-center items-center">
+                <div className="z-0">
+                    <CarouselComponent/>
+                    <div className="logoHOME">
+                        <img className="h-96 w-96" src={logo} alt="logo"/>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

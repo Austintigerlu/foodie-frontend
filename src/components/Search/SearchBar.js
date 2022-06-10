@@ -5,6 +5,7 @@ function SearchBar(props){
     const [search, setSearch] = useState(props.search || "");
     const [location, setLocation] = useState(props.location || "Midtown");
     console.log(location)
+    
     function Submit(e){
         e.preventDefault();
         if(typeof props.restaurantSearch === 'function'){

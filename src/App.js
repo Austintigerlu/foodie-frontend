@@ -6,8 +6,8 @@ import Login from "./components/Header/Login";
 import Register from "./components/Header/Register";
 import SearchPage from "./pages/SearchPage";
 import {Route, Routes} from "react-router-dom";
-import queryString from 'query-string'
 import PrivateRoute from "./components/utils/PrivateRoute";
+import RestaurantPage from "./pages/RestaurantPage"
 
 function App() {
   
@@ -20,6 +20,7 @@ function App() {
               <Route path="/login" element={<Login/>}/>
               <Route path="/register" element={<Register/>}/>
               <Route path="/search" element={<SearchPage/>}/>
+              <Route path="/restaurant/:id" element={<RestaurantPage/>}/>
           </Routes>
       <Footer/>
     </div>

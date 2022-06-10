@@ -9,15 +9,17 @@ function YelpAPI(search, location){
     const [amountResults, setAmountResults] = useState();
     const [searchParams, setSearchParams] = useState({search, location});
     console.log(searchParams.search)
+    const URL = "http://localhost:8000/restaurants/"
     
-    const config = {
-      params:{
-        term: searchParams.search,
-        location: searchParams.location
+    useEffect(()=> {
+      async function fetchRestaurants(){
+        const data = await axios.get(URL)
+        setBusinesses(data)
       }
-    }
+      fetchRestaurants()
+    }, [searchParams])
     
-    axios.get()
+    console.log(businesses)
 
     return [businesses, amountResults, searchParams, setSearchParams]
 }

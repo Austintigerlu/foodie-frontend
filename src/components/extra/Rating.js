@@ -7,14 +7,13 @@ function Rating(props){
     return(
         <div className="flex items-end mb-1">
             <StarRatings
-                rating={1}
+                rating={props.rating}
                 starRatedColor="orange"
                 numberOfStars={5}
                 name="rating"
                 starDimension="25px"
                 starSpacing="1px"
             />
-            <p className="ml-2"># Reviews</p>
         </div>
     )
 }
