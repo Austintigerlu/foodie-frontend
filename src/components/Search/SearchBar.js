@@ -1,18 +1,16 @@
-import React, {useState} from "react"
+import React, {useContext} from "react"
+import AuthContext from "../../context/AuthContext";
 
 
 function SearchBar(props){
-    const [search, setSearch] = useState(props.search || "");
-    const [location, setLocation] = useState(props.location || "Midtown");
-    console.log(location)
+
+    let {setSearch, setLocation, search, location, restaurantSearch} = useContext(AuthContext)
     
     function Submit(e){
-        e.preventDefault();
-        if(typeof props.restaurantSearch === 'function'){
-            props.restaurantSearch(search, location)
-        }
-
+        e.preventDefault()
+        restaurantSearch(search, location)
     }
+
     return(
     <form onSubmit={Submit}>
         <div className="flex">
@@ -33,6 +31,7 @@ function SearchBar(props){
                 name="location"
                 className="pl-1 border border-black"
             >
+                <option value="">Anywhere</option>
                 <option value="Midtown">Midtown</option>
                 <option value="Poncey-Highlands">Poncey-Highlands</option>
                 <option value="Old Fourth Ward">Old Fourth Ward</option>

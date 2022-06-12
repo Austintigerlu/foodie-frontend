@@ -4,7 +4,7 @@ import Rating from "../extra/Rating"
 
 function Result(props){
     const business = props.business
-    console.log(business)
+
     return(
         <div className="flex">
             <img className="rounded-lg w-64 h-64" src={business.image} alt="Business Img"/>

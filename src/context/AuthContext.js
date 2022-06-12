@@ -10,7 +10,6 @@ export function AuthProvider({children}) {
 
     let [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null) 
     let [user, setUser] = useState(() => localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')) : null) 
-    let [loading, setLoading] = useState(true)
 
     let navigate = useNavigate();
     
@@ -51,10 +50,10 @@ export function AuthProvider({children}) {
         let data = await response.json()
         if(response.status === 200){
             setAuthTokens(data)
+            console.log(data)
             setUser(jwt_decode(data.access))
             localStorage.setItem('authTokens', JSON.stringify(data))
             navigate('/')
-            console.log(user)
         } else{
             console.log('ERROR')
         }
@@ -67,59 +66,32 @@ export function AuthProvider({children}) {
         navigate('/login')
     }
 
-    let updateToken = async ()=> {
+    const [search, setSearch] = useState("");
+    const [location, setLocation] = useState("");
 
-        let response = await fetch(URL+'users/refresh/', {
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify({'refresh':authTokens?.refresh})
-        })
-
-        let data = await response.json()
-        
-        if (response.status === 200){
-            setAuthTokens(data)
-            setUser(jwt_decode(data.access))
-            localStorage.setItem('authTokens', JSON.stringify(data))
-        }else{
-            logoutUser()
-        }
-
-        if(loading){
-            setLoading(false)
-        }
+    function restaurantSearch(search, location){
+        const urlEncodedSearch = encodeURI(search);
+        const urlEncodedLocation = encodeURI(location);
+        navigate(`/search?find_desc=${urlEncodedSearch}&find_loc=${urlEncodedLocation}`);
     }
-
+    
     let contextData = {
         loginUser: loginUser,
         authTokens: authTokens,
         user: user,
         logoutUser: logoutUser,
         registerUser: registerUser,
+        search: search,
+        setSearch: setSearch,
+        setLocation: setLocation,
+        location: location,
+        restaurantSearch: restaurantSearch
     }
 
-    useEffect(()=> {
-
-        if(loading){
-            updateToken()
-        }
-
-        let time = 1000 * 60 * 14
-
-        let interval =  setInterval(()=> {
-            if(authTokens){
-                updateToken()
-            }
-        }, time)
-        return ()=> clearInterval(interval)
-
-    }, [authTokens, loading])
 
     return(
         <AuthContext.Provider value={contextData}>
-            {loading ? null : children}
+            {children}
         </AuthContext.Provider>
     )
 }

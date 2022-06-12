@@ -1,6 +1,7 @@
 import React from "react"
 
 function SearchFilter(props){
+    
     return(
         <div>
             <div className="flex justify-center">

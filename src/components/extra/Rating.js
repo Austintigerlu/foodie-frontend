@@ -14,6 +14,7 @@ function Rating(props){
                 starDimension="25px"
                 starSpacing="1px"
             />
+            <p>{props.rating}/5</p>
         </div>
     )
 }

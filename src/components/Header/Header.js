@@ -5,7 +5,7 @@ import LoginNav from "./LoginNav";
 
 function Header(props){
     let {user} = useContext(AuthContext)
-    console.log(user)
+
     return (
         <header>
             {!user ? <Nav/> : <LoginNav/>}

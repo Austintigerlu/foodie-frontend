@@ -9,14 +9,14 @@ import {Route, Routes} from "react-router-dom";
 import PrivateRoute from "./components/utils/PrivateRoute";
 import RestaurantPage from "./pages/RestaurantPage"
 
-function App() {
-  
+function App(props) {
+
   return (
     <div className="App">
       <Header/>
           <Routes>
               <Route exact path="/" element={<HomePage/>}/>
-              <Route path="/profile/*" element={<PrivateRoute/>}/>
+              <Route path="/profile" element={<PrivateRoute/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/register" element={<Register/>}/>
               <Route path="/search" element={<SearchPage/>}/>

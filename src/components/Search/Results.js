@@ -1,20 +1,21 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useContext, useEffect} from "react"
 import Result from "./Result"
 import axios from "axios";
 import {Link} from "react-router-dom"
-
+import AuthContext from "../../context/AuthContext";
 function Results(props){
     const [businesses, setBusinesses] = useState([]);
     const URL = "http://localhost:8000/restaurants/"
+    let {search, location, restaurantSearch} = useContext(AuthContext)
 
     useEffect(()=> {
         async function fetchRestaurants(){
-          const data = await axios.get(URL)
+          const data = await axios.get(URL+'?find_desc='+search+'&find_loc='+location)
           setBusinesses(data.data)
         }
         fetchRestaurants()
-    }, [URL])
-    console.log(businesses)
+    }, [restaurantSearch])
+
 
     const loaded = () => {
         const mapping = businesses.map((business, i) => {

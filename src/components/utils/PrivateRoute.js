@@ -1,14 +1,13 @@
-import {Route, Routes, Navigate} from 'react-router-dom'
+import {Navigate} from 'react-router-dom'
 import ProfilePage from '../../pages/ProfilePage'
-
-function PrivateRoute({children}) {
-    const authenticated = false
+import AuthContext from '../../context/AuthContext'
+import { useContext } from 'react'
+function PrivateRoute() {
+    let {user} = useContext(AuthContext)
     return(
-        <Routes>
-        <Route path="/" element={<ProfilePage/>}>
-            {!authenticated ? <Navigate to='/'/> : children}
-        </Route>
-        </Routes>
+        <>
+        {!user ? <Navigate to='/login'/>: <ProfilePage/>}
+        </>
     )
 }
 

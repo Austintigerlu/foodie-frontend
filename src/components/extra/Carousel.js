@@ -14,7 +14,6 @@ function CarouselComponent(props){
         }
         fetchRestaurants()
     }, [URL])
-    console.log(images)
 
     const loaded = () => {
         const mapping = images.map((image, i) => {
