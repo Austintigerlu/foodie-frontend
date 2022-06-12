@@ -8,6 +8,7 @@ import SearchPage from "./pages/SearchPage";
 import {Route, Routes} from "react-router-dom";
 import PrivateRoute from "./components/utils/PrivateRoute";
 import RestaurantPage from "./pages/RestaurantPage"
+import EditPage from "./pages/EditPage";
 
 function App(props) {
 
@@ -21,6 +22,7 @@ function App(props) {
               <Route path="/register" element={<Register/>}/>
               <Route path="/search" element={<SearchPage/>}/>
               <Route path="/restaurant/:id" element={<RestaurantPage/>}/>
+              <Route path="/restaurant/:id/edit" element={<EditPage/>}/>
           </Routes>
       <Footer/>
     </div>

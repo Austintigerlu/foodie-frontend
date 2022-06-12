@@ -23,7 +23,7 @@ function Results(props){
                     <div key={i}className="m-5">
                         <Link to={'/restaurant/' + business.id}>
                             <Result business={business}/>
-                            </Link>
+                        </Link>
                     </div>
             )
         })

@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import Rating from '../components/extra/Rating';
 import Reviews from '../components/extra/Reviews'
 import axios from 'axios';
@@ -21,6 +21,7 @@ function RestaurantPage(props){
         }
         fetchRestaurants()
     }, [URL])
+
     const loaded = () =>{
         const mapping = reviews.map((review, i) =>{
             return(
@@ -39,12 +40,12 @@ function RestaurantPage(props){
             </>
         )
     }
-    console.log(user)
+
     let deleteRestaurant = async(e) => {
         e.preventDefault()
         const context ={
             method: 'DELETE',
-            url: URL+id+'/reviews',
+            url: URL+id+'/admin',
             headers: {
                 'Authorization': `Bearer ${authTokens.access}`,
             }
@@ -53,6 +54,7 @@ function RestaurantPage(props){
             .then(()=> navigate(-1))
             .catch((error)=>console.log(error))
     }
+
     return(
         <div className='m-5'>
             <button 
@@ -60,9 +62,14 @@ function RestaurantPage(props){
                 onClick={()=> navigate(-1)}
                 >Go Back
             </button>
-            <button className='ml-10'>
+            {!authTokens || authTokens.isAdmin === false ? <div></div> : 
+            <button onClick={deleteRestaurant} className='ml-10'>
                 Delete
-            </button>
+            </button>}
+            {!authTokens || authTokens.isAdmin === false ? <div></div> : 
+            <button onClick={()=>navigate(`/restaurant/${id}/edit`)} className='ml-10'>
+                Edit
+            </button>}
             <div className='grid grid-cols-3'>
                 <div>
                 <img src={businesses.image} alt={businesses.name}/>
