@@ -11,7 +11,7 @@ function Login(props) {
           <div className='max-w-md w-full space-y-8'>
             <h1 className='mt-6 text-center text-3xl font-extrabold text-gray-900'>Log in to your account</h1>
             <Link to="/register" className="mt-2 text-center text-sm text-gray-600">
-              <p className="font-medium text-indigo-600 hover:text-indigo-500">or register here</p>
+              <p className="font-medium text-orange-400 hover:text-orange-400">or register here</p>
             </Link>
             <form className="mt-8 space-y-6" onSubmit={loginUser}>
               <div className="rounded-md shadow-sm -space-y-px">
@@ -51,9 +51,9 @@ function Login(props) {
                   type="submit" 
                   className="group relative w-full flex justify-center
                   py-2 px-4 border border-transparent text-sm font-medium
-                  rounded-md text-white bg-indigo-600 hover:bg-indigo-700
+                  rounded-md text-white bg-orange-400 hover:bg-orange-500
                   focus:outline-none focus:ring-2 focus:ring-offset-2
-                  focus:ring-indigo-500"
+                  focus:ring-orange-500"
                 >Login</button>
               </div>
             </form>

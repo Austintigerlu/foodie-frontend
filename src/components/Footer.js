@@ -1,7 +1,7 @@
 function Footer(props){
     return (
       <>
-        <footer className="inset-x-0 bottom-0 bg-gray-800 text-white">
+        <footer className="mt-auto inset-x-0 bottom-0 bg-gray-600 text-white">
           <div className="container pt-2">
             <div className="text-center">
                 <p className="inline">Austin Lu</p>

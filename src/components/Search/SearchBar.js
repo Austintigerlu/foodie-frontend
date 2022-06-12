@@ -14,22 +14,22 @@ function SearchBar(props){
     return(
     <form onSubmit={Submit}>
         <div className="flex">
-            <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+            <span className="rounded-l-lg inline-flex items-center px-3 text-sm text-white bg-gray-600 ">
             Search
             </span>
             <input 
                 onChange={(e) => setSearch(e.target.value)}
                 type="text" 
                 placeholder="Search" 
-                className="pl-1 border border-black"
+                className="pl-1 "
             />
-            <span className="inline-flex items-center px-3 text-md text-black bg-slate-300 border border-r-0 border-gray-300">
+            <span className="inline-flex items-center px-3 text-md text-white bg-gray-600">
             Location
             </span>
             <select 
                 onChange={(e) => setLocation(e.target.value)}
                 name="location"
-                className="pl-1 border border-black"
+                className="rounded-r-lg pl-1 "
             >
                 <option value="">Anywhere</option>
                 <option value="Midtown">Midtown</option>

@@ -6,8 +6,8 @@ function EditPage(props){
     const navigate= useNavigate()
     const {id} = useParams();
     let {authTokens} = useContext(AuthContext)
-    const [businesses, setBusinesses] = useState([]);
-    const URL = "http://localhost:8000/restaurants/"
+
+    const URL = process.env.REACT_APP_YELP_API + "restaurants/"
 
 
     let editRestaurant = async(e) => {

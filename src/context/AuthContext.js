@@ -12,7 +12,7 @@ export function AuthProvider({children}) {
     let [user, setUser] = useState(() => localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')) : null) 
     let navigate = useNavigate();
     
-    const URL = "http://localhost:8000/api/"
+    const URL = process.env.REACT_APP_YELP_API + "api/"
     
     let registerUser = async(e) => {
         e.preventDefault()
@@ -66,11 +66,13 @@ export function AuthProvider({children}) {
 
     const [search, setSearch] = useState("");
     const [location, setLocation] = useState("");
+    const [page, setPage] = useState(1)
+    const [pageAmmount, setPageAmmount] = useState(0)
 
     function restaurantSearch(search, location){
         const urlEncodedSearch = encodeURI(search);
         const urlEncodedLocation = encodeURI(location);
-        navigate(`/search?find_desc=${urlEncodedSearch}&find_loc=${urlEncodedLocation}`);
+        navigate(`/search?find_desc=${urlEncodedSearch}&find_loc=${urlEncodedLocation}&page=1`);
     }
     
     let contextData = {
@@ -83,7 +85,11 @@ export function AuthProvider({children}) {
         setSearch: setSearch,
         setLocation: setLocation,
         location: location,
-        restaurantSearch: restaurantSearch
+        restaurantSearch: restaurantSearch,
+        page:page,
+        setPage:setPage,
+        setPageAmmount:setPageAmmount,
+        pageAmmount: pageAmmount
     }
 
 

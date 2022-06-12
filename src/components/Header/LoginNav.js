@@ -35,12 +35,12 @@ function LoginNav(){
                         </div>
                         <div className="mr-2 flex items-end space-x-4">
                             <Link to="/profile">
-                                <p className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                <p className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                     Profile
                                 </p>
                             </Link>
                             <Link to="/login">
-                                <p onClick={logoutUser} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                <p onClick={logoutUser} className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                     Logout
                                 </p>
                             </Link>

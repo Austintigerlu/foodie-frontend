@@ -9,7 +9,7 @@ function Reviews(props){
     const [rating, setRating] = useState()
     const [comment, setComment] = useState()
     const {id} = useParams();
-    const URL = "http://localhost:8000/restaurants/"
+    const URL = process.env.REACT_APP_YELP_API+"restaurants/"
     
     let createReview = async(e) => {
         e.preventDefault()

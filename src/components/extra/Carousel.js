@@ -4,13 +4,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 import axios from "axios";
 
 function CarouselComponent(props){
-    const URL = "http://localhost:8000/restaurants/"
+    const URL = process.env.REACT_APP_YELP_API
+
     const [images, setImages] = useState([])
 
     useEffect(()=> {
         async function fetchRestaurants(){
-            const data = await axios.get(URL)
-            setImages(data.data)
+            const data = await axios.get(URL+'restaurants/')
+            setImages(data.data.restaurants)
         }
         fetchRestaurants()
     }, [URL])
@@ -27,7 +28,7 @@ function CarouselComponent(props){
 
         return (
             <div>
-                <Carousel showThumbs={false} autoPlay interval={6000} infiniteLoop>
+                <Carousel showThumbs={false} autoPlay interval={3000} infiniteLoop>
                     {mapping}
                 </Carousel>
             </div>

@@ -3,18 +3,23 @@ import Result from "./Result"
 import axios from "axios";
 import {Link} from "react-router-dom"
 import AuthContext from "../../context/AuthContext";
+import PageButtons from "../extra/PageButtons";
 function Results(props){
     const [businesses, setBusinesses] = useState([]);
-    const URL = "http://localhost:8000/restaurants/"
-    let {search, location, restaurantSearch} = useContext(AuthContext)
+
+
+    const URL = process.env.REACT_APP_YELP_API+"restaurants/"
+    let {search, location, restaurantSearch, page, setPage, setPageAmmount} = useContext(AuthContext)
 
     useEffect(()=> {
         async function fetchRestaurants(){
-          const data = await axios.get(URL+'?find_desc='+search+'&find_loc='+location)
-          setBusinesses(data.data)
+          const data = await axios.get(URL+'?find_desc='+search+'&find_loc='+location+'&page='+page)
+          setBusinesses(data.data.restaurants)
+          setPage(data.data.page)
+          setPageAmmount(data.data.pages)
         }
         fetchRestaurants()
-    }, [restaurantSearch])
+    }, [restaurantSearch, page])
 
 
     const loaded = () => {
@@ -31,7 +36,7 @@ function Results(props){
             <div className="flex flex-col items-center mt-5">
                 
                 {mapping}
-
+                <PageButtons/>
             </div>
         )
     }

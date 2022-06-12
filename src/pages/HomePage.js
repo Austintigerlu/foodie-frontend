@@ -10,14 +10,15 @@ function HomePage(props){
 
     return(
         <div>
-            <div className="flex justify-center items-center">
-                <div className="z-0">
+            <div className="flex justify-center items-center mb-20">
+                <div className="-z-10">
                     <CarouselComponent/>
                     <div className="logoHOME">
                         <img className="h-96 w-96" src={logo} alt="logo"/>
                     </div>
                 </div>
             </div>
+            <Results/>
         </div>
     )
 }

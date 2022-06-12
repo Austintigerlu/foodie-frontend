@@ -33,12 +33,12 @@ function Nav(){
                         </div>
                         <div className="mr-2 flex items-end space-x-4">
                             <Link to="/login">
-                                <p className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                <p className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                     Login
                                 </p>
                             </Link>
                             <Link to="/register">
-                                <p className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                <p className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                     Register
                                 </p>
                             </Link>

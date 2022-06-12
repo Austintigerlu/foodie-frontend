@@ -11,7 +11,7 @@ function RestaurantPage(props){
     let {user, authTokens} = useContext(AuthContext)
     const [businesses, setBusinesses] = useState([]);
     const [reviews, setReviews] = useState([]);
-    const URL = "http://localhost:8000/restaurants/"
+    const URL = process.env.REACT_APP_YELP_API + "restaurants/"
 
     useEffect(()=> {
         async function fetchRestaurants(){
@@ -72,11 +72,11 @@ function RestaurantPage(props){
             </button>}
             <div className='grid grid-cols-3'>
                 <div>
-                <img src={businesses.image} alt={businesses.name}/>
+                <img className="rounded-lg w-76 h-76 object-cover" src={businesses.image} alt={businesses.name}/>
                 </div>
                 <div className="ml-2">
                 <h2>{businesses.name}</h2>
-                    <Rating rating={businesses.rating}/>
+                    <Rating business={businesses}/>
                 <p>{businesses.price}
                     <span className="text-xs font-semibold inline-block py-1 px-2 rounded text-slate-600 bg-slate-200 uppercase last:mr-0 ml-1 mr-1">
                     {businesses.category}</span>
