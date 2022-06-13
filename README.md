@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+## Description
+Basically, it's a clone of yelp but just for restaurants. Using google maps API to create an interactive map with pins for restaurants. I will use a Yelp API to populate restaurant data. I will use a Django backend to store user profiles and react frontend to build the wireframe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# User Stories
 
-## Available Scripts
+- Users can search locations for Restaurants in that area within a certain radius. 
+- Users can create profiles and leave reviews at these restaurants. 
+- Users can favorite restaurants to their profile to save for later. 
+- Users can follow other users to see reviews and favorite restaurants.
 
-In the project directory, you can run:
+# MVP
+- Getting API fully functioning
+- User Profiles
+- Creating reviews, Edit Reviews, Delete Reviews
+- Have different categories for restaurants
 
-### `npm start`
+# Stretch
+- Creating a ranking system for restaurants so the top ones appear first based on reviews
+- Social Media functionality where you can follow other users
+- Saving favorite restaurants
+- Carousel
+- Having Business Profiles
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Wireframe
+<img width="703" alt="Screen Shot 2022-06-03 at 2 32 21 PM" src="https://user-images.githubusercontent.com/101610362/171931312-ac143cf3-cad2-47dd-a24a-00f511ba09a9.png">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Components
+<img width="916" alt="Screen Shot 2022-06-03 at 2 48 15 PM" src="https://user-images.githubusercontent.com/101610362/171931363-52294f1e-3ba3-4704-add9-ef7020bd5fe8.png">
 
-### `npm test`
+# Models
+<img width="618" alt="Screen Shot 2022-06-03 at 3 02 28 PM" src="https://user-images.githubusercontent.com/101610362/171931419-d63f4776-9f45-42bb-a9c4-042dd9e646d8.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
