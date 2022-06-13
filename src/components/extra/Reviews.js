@@ -1,8 +1,7 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import {useParams} from 'react-router-dom'
 import axios from 'axios';
 import AuthContext from '../../context/AuthContext';
-import StarRatings from "react-star-ratings"
 
 function Reviews(props){
     let {user, authTokens} = useContext(AuthContext)

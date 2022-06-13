@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Rating from '../components/extra/Rating';
 import Reviews from '../components/extra/Reviews'
 import axios from 'axios';
@@ -21,8 +21,8 @@ function RestaurantPage(props){
             setReviews(data.data.reviews)
         }
         fetchRestaurants()
-    }, [URL])
-    console.log(reviews)
+    }, [URL, id])
+
     const loaded = () =>{
         const mapping = reviews.map((review, i) =>{
             console.log(review)
