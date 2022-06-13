@@ -7,7 +7,7 @@ function Result(props){
     const address = business.address.split(",")
 
     return(
-        <div className="flex max-w-full border-2 border-cyan-800 rounded-lg">
+        <div className="flex max-w-full overflow-x-auto shadow-lg border-2 border-cyan-800 rounded-lg">
             <div className="max-w-md content-center justify-items-center">
             <img className="w-64 rounded-l-md h-64 object-cover" src={business.image} alt="Business Img"/>
             </div>
