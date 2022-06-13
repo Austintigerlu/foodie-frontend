@@ -37,7 +37,7 @@ function Reviews(props){
             .then(function(response){
                 props.setReviews(response.data)
                 console.log(response)
-                // refreshPage()
+                refreshPage()
             })
             .catch(function(error){
                 props.setReviews(error)
