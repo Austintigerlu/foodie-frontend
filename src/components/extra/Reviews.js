@@ -13,6 +13,7 @@ function Reviews(props){
     
     const refreshPage = () =>{
         window.location.reload();
+        return false;
     }
     
     let createReview = async(e) => {
@@ -54,7 +55,7 @@ function Reviews(props){
                     <textarea onChange={(e)=> setComment(e.target.value)} id="comment" rows="4" className="px-0 w-full text-sm bg-gray-50 border-0 focus:ring-0" placeholder="Write a comment..." required></textarea>
                 </div>
                 <div className="flex justify-between items-center py-2 px-3 border rounded-b-lg">
-                    <button type="submit" className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-cyan-800 rounded-lg focus:ring-4 focus:ring-blue-200 hover:bg-cyan-600">
+                    <button type="submit" className="p-1 inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-cyan-800 rounded-lg focus:ring-4 focus:ring-blue-200 hover:bg-cyan-600">
                         Post Review
                     </button>
                     <div className="flex pl-0 space-x-1 sm:pl-2">

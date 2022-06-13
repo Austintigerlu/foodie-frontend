@@ -72,7 +72,7 @@ export function AuthProvider({children}) {
     function restaurantSearch(search, location){
         const urlEncodedSearch = encodeURI(search);
         const urlEncodedLocation = encodeURI(location);
-        navigate(`/search?find_desc=${urlEncodedSearch}&find_loc=${urlEncodedLocation}&page=1`);
+        navigate(`/search?find_desc=${urlEncodedSearch}&find_loc=${urlEncodedLocation}&page=${page}`);
     }
     
     let contextData = {
