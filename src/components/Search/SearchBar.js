@@ -14,7 +14,7 @@ function SearchBar(props){
     return(
     <form onSubmit={Submit}>
         <div className="flex">
-            <span className="rounded-l-lg inline-flex items-center px-3 text-sm text-white bg-gray-600 ">
+            <span className="rounded-l-lg inline-flex items-center px-3 text-sm text-white bg-gray-500 ">
             Search
             </span>
             <input 
@@ -23,7 +23,7 @@ function SearchBar(props){
                 placeholder="Search" 
                 className="pl-1 "
             />
-            <span className="inline-flex items-center px-3 text-md text-white bg-gray-600">
+            <span className="inline-flex items-center px-3 text-md text-white bg-gray-500">
             Location
             </span>
             <select 

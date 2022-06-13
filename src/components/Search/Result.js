@@ -4,6 +4,7 @@ import Rating from "../extra/Rating"
 
 function Result(props){
     const business = props.business
+    console.log(business)
     const address = business.address.split(",")
     console.log(business)
     return(
@@ -11,7 +12,7 @@ function Result(props){
             <div className="max-w-md content-center justify-items-center">
             <img className="rounded-lg w-64 h-64 object-cover" src={business.image} alt="Business Img"/>
             </div>
-            <div className="ml-5 max-w-lg">
+            <div className="ml-5 max-w-lg border-2 p-2.5 rounded-md">
                 <h2 className="text-2xl font-bold mb-3">{business.name}</h2>
                     <Rating business={business}/>
                 <p>{business.price}
@@ -22,9 +23,9 @@ function Result(props){
                     <p>{business.description}</p>
                 </div>
             </div>
-            <div className="ml-10  w-48">
-                <p className="text-right">{address[0]}</p>
-                <p className="text-right">{address[1]}</p>
+            <div className="ml-10 w-48 border-2 p-2.5 rounded-md bg-gray-600 opacity-75 shadow-lg">
+                <p className="text-right text-white">{address[0]}</p>
+                <p className="text-right text-white">{address[1]}</p>
             </div>
         </div>
     )

@@ -21,7 +21,7 @@ function CarouselComponent(props){
 
             return (
                 <div className="realtive h-96 w-full" key={i}>
-                    <img className="w-full h-full object-cover mix-blend-overlay" src={image.image}/>
+                    <img className="w-full h-full object-cover mix-blend-overlay" src={image.image} alt={image.name}/>
                 </div>
             )
         })

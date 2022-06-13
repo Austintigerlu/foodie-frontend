@@ -5,11 +5,15 @@ import AuthContext from '../../context/AuthContext';
 
 function Reviews(props){
     let {user, authTokens} = useContext(AuthContext)
-    const [reviews, setReviews] = useState()
+
     const [rating, setRating] = useState()
     const [comment, setComment] = useState()
     const {id} = useParams();
     const URL = process.env.REACT_APP_YELP_API+"restaurants/"
+    
+    const refreshPage = () =>{
+        window.location.reload();
+    }
     
     let createReview = async(e) => {
         e.preventDefault()
@@ -30,12 +34,15 @@ function Reviews(props){
 
         axios.request(context)
             .then(function(response){
-                setReviews(response.data)
+                props.setReviews(response.data)
+                refreshPage()
             })
             .catch(function(error){
-                setReviews(error)
+                props.setReviews(error)
             })
     }
+
+    
 
     return(
         <div>
