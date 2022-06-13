@@ -22,14 +22,14 @@ function RestaurantPage(props){
         }
         fetchRestaurants()
     }, [URL])
-
+    console.log(reviews)
     const loaded = () =>{
         const mapping = reviews.map((review, i) =>{
             console.log(review)
             return(
-                <tr key={i} className='bg-gray-50'>
+                <tr key={i} className='bg-gray-200 border-t-2 border-cyan-800'>
                     <td className='px-6 py-4'>{review.createdAt.substring(0,10)}</td>
-                    <td className='px-6 py-4 flex items-end'>{<StarRatings
+                    <td className='px-2 py-4'>{<StarRatings
                             rating={review.rating}
                             starRatedColor="orange"
                             numberOfStars={5}
@@ -38,7 +38,7 @@ function RestaurantPage(props){
                             starSpacing="1px"
                         />}
                     </td>
-                    <td className='px-6 py-4'>{review.comment}</td>
+                    <td className='px-2 py-4'>{review.comment}</td>
                 </tr>
             )
         })
@@ -100,20 +100,20 @@ function RestaurantPage(props){
                         <p>{businesses.description}</p>
                     </div>
                 </div>
-                <div className="ml-10 w-48 border-2 p-2.5 overflow-x-auto shadow-lg sm:rounded-lg rounded-md bg-gray-600 opacity-75">
-                    <p className='text-white text-right'>{businesses.address}</p>
+                <div className="ml-10 w-48 border-2 p-2.5 overflow-x-auto shadow-lg sm:rounded-lg rounded-md border-cyan-800">
+                    <p className='text-right'>{businesses.address}</p>
                 </div>
             </div>
             <hr className='mt-5'/>
             <div className='mt-5 relative overflow-x-auto shadow-lg sm:rounded-lg'>
-                <h2 className="bg-gray-500 text-white text-center uppercase text-lg font-semibold">Reviews</h2>
+                <h2 className="bg-cyan-800 text-white text-center uppercase text-lg font-semibold">Reviews</h2>
                 <hr/>
                 <table className='table-fixed w-full text-sm text-left'>
                     <thead className='text-xs uppercase bg-gray-300'>
                         <tr>
                             <th scope="col" className="px-6 py-3">Date</th>
-                            <th scope="col" className="px-6 py-3">Rating</th>
-                            <th scope="col" className="px-6 py-3">Comment</th>
+                            <th scope="col" className="px-2 py-3">Rating</th>
+                            <th scope="col" className="px-2 py-3">Comment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -123,7 +123,7 @@ function RestaurantPage(props){
             </div>
             <hr className='mt-5'/>
             <div className='mt-5'>
-                <h4>Write a Review</h4>
+                <h4 className="bg-cyan-800 text-white text-center text-lg font-semibold overflow-x-auto shadow-lg sm:rounded-t-lg">Write a Review</h4>
                 {user ? <Reviews reviews={reviews} setReviews={setReviews}/> : <p>Please login to write a review</p>}
             </div>
         </div>

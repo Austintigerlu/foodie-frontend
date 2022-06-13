@@ -13,7 +13,7 @@ function PageButtons(){
                 key={x+1}
                 to={`/search?find_desc${search}&find_loc=${location}&page=${x+1}`}
             >
-                <button onClick={()=>setPage(x+1)} className={`${page === x+1 ? 'bg-whiteborder-gray-300': 'bg-indigo-50'} text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium`}> {x+1} </button>
+                <button onClick={()=>setPage(x+1)} className={`${page === x+1 ? 'bg-cyan-800 text-white': 'bg-indigo-50'}  hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium`}> {x+1} </button>
             </Link>
             )
         })}
