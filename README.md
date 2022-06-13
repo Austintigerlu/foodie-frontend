@@ -1,6 +1,8 @@
 ## Description
 Basically, it's a clone of yelp but just for restaurants. Using google maps API to create an interactive map with pins for restaurants. I will use a Yelp API to populate restaurant data. I will use a Django backend to store user profiles and react frontend to build the wireframe
 
+- Website: https://foodie-atlanta.netlify.app/
+
 # Backend
 Hosted on Heroku
 - Github: https://github.com/Austintigerlu/foodie-backend
