@@ -12,7 +12,7 @@ function Reviews(props){
     const URL = process.env.REACT_APP_YELP_API+"restaurants/"
     
     const refreshPage = () =>{
-        window.location.reload();
+        window.location.reload(true);
         return false;
     }
     
